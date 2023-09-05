@@ -1,0 +1,244 @@
+{% extends 'layout.html' %}
+
+
+{% block appDescription %}
+{% include 'nav.html' %}
+<header id="home">
+    <div class="description-header">
+        <h1>
+            A minimal desktop 
+            media player<br/>
+            built with ease
+        </h1>
+        <video class="img-fluid rounded shadow-lg" width="550" height="400" muted autoplay loop style="border: none;">
+            <source src="{{ url_for('static', filename='videos/recording.mp4') }}"></source>
+        </video>
+        <!-- <img class="player-screenshot img-fluid rounded mt-3" 
+        src="{{ url_for('static', filename='images/player-img-1.png') }}"
+        alt="player screenshot" 
+        width="550"
+        height="400"
+        /> -->
+    </div>
+</header>
+{% endblock appDescription %}
+
+{% block content %}
+<section id="features">
+    <div class="features">
+        <h2 class="features-title mb-3">Features</h2>
+        <div class="features-content">
+            <div class="row">
+
+                <!-- import feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/import.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            Import media
+                        </h5>
+                        <p class="feature-card-descr">
+                            You can import single or multiple media from different computer storage locations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- controls feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/playback.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            Control playback
+                        </h5>
+                        <p class="feature-card-descr">
+                            It comes with a small-set of controls to give you full control of your media.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- drag & drop feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/drag.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            Drag & drop
+                        </h5>
+                        <p class="feature-card-descr">
+                            You can drag & drop both audio and video from different computer storage locations to the player.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <!-- support formats feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/file.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            Supported formats
+                        </h5>
+                        <p class="feature-card-descr">
+                            The player supports mp3, wav, ogg for audio and mp4, webm, ogg for video.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- metadata feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/metadata.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            View metadata
+                        </h5>
+                        <p class="feature-card-descr">
+                            You can view both audio and video metadata to access more information about the media.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- file associations feature -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img class="img-fluid" 
+                        src="{{ url_for('static', filename='images/file-association.png') }}" 
+                        alt="feature icon"
+                        width="80%"
+                        />
+                        <h5 class="feature-card-title mt-2">
+                            File association
+                        </h5>
+                        <p class="feature-card-descr">
+                            Supported media files can be set to be opened by default using the application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="explore">
+    <div class="explore mt-5 rounded shadow-lg">
+        <!-- <h2 class="explore-title mt-2 mb-5">Explore</h2> -->
+        <div class="explore-content">
+            <div class="row explore-row mt-5">
+                <div class="col-6">
+                    <div class="explore-card">
+                        <h1 class="explore-card-title">
+                            Everything you<br/>
+                            need in a media<br/>player
+                        </h1>
+                        <p class="text-muted mt-3">
+                            Contains everything you would expect in any media player plus other amazing features.
+                        </p>
+
+                        <a href="#download" class="btn btn-dark download-btn float-left">
+                            Download App
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="explore-img-container">
+                        <img class="img-fluid rounded shadow-lg" src="{{ url_for('static', filename='images/player-img-3.png') }}" 
+                        alt="player screenshot"
+                        width="100%"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row explore-row mt-5">
+
+                <div class="col-6">
+                    <div class="explore-img-container-2">
+                        <img class="img-fluid rounded shadow-lg" src="{{ url_for('static', filename='images/player-img-1.png') }}" 
+                        alt="player screenshot"
+                        width="100%"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="explore-card">
+                        <h1 class="explore-card-title">
+                            Experience a modern<br/>
+                            visual and simple<br/> design
+                        </h1>
+                        <p class="text-muted mt-3">
+                            A better UI design to give you the best experience and ease.
+                        </p>
+
+                        <a href="#download" class="btn btn-dark download-btn float-left">
+                            Download App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="download">
+    <div class="download mt-5 mb-5 shadow-lg">
+        <div class="row download-row">
+
+            <div class="col-md-6">
+                <h1>
+                    Available Now<br/>
+                    on the Following</br>
+                    Platforms!
+                </h1>
+                <div class="download-btns mt-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <form method="POST" action="/download">
+                                <input type="hidden" name="downloads" value="windows" />
+                                <button type="submit" class="btn btn-success" id="download-btn-windows">
+                                    Download for Windows
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-6">
+                            <form method="POST" action="/download">
+                                <input type="hidden" name="downloads" value="linux" />
+                                <button class="download-btn-linux btn btn-outline-primary ml-2">
+                                    Download for Linux
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+                <img class="img-fluid rounded shadow-lg" src="{{ url_for('static', filename='images/player-img-4.png') }}" 
+                alt="player screenshot"
+                width="100%"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

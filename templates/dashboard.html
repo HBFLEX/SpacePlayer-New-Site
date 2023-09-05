@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <title>Welcome to SpacePlayer DashBoard</title>
+</head>
+
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        background-color: #222;
+    }
+
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .header-link{
+        font-weight: 700;
+    }
+
+    .page-title{
+        color:azure;
+        font-weight: 600;
+    }
+
+    .analytic-title{
+        font-weight: 600;
+    }
+
+</style>
+<body>
+
+    <header>
+        <div class="bg-dark text-white p-3">
+            <div class="header-container">
+                <a href="{{ url_for('dashboard') }}" class="header-link text-decoration-none shadow bg-primary p-3 rounded text-white">
+                    My DashBoard
+                </a>
+                <span id="dateTime" class="bg-success shadow p-3 rounded"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mt-3">
+        <h1 class="page-title mb-3">Analytics</h1>
+
+        <div class="row gap-3">
+            <div class="col-md-4">
+                <div class="bg-success p-4 rounded shadow">
+                    <p class="lead text-end">{{ context.total_num_of_visits }}</p>
+                    <h5 class="analytic-title">Total Number of Visits (Traffic)</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="bg-primary p-4 rounded shadow">
+                    <p class="lead text-end">{{ context.windows_no_of_downloads }}</p>
+                    <h5 class="analytic-title">Total Downloads for Windows OS</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="bg-danger p-4 rounded shadow">
+                    <p class="lead text-end">{{ context.linux_no_of_downloads }}</p>
+                    <h5 class="analytic-title">Total Downloads for Linux OS</h5>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="bg-warning p-4 rounded shadow">
+                    <p class="lead text-end">{{ context.total_num_of_downloads }}</p>
+                    <h5 class="analytic-title">Overall Total Downloads</h5>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-center mt-5 text-white p-3">
+            &copy; SpacePlayer Admin @SpaceLabs Tech. All rights reserved 2023
+        </footer>
+    </section>
+
+    <script>
+        const dateTime = document.getElementById('dateTime')
+        dateTime.innerHTML = new Date().toUTCString()
+    </script>
+    
+</body>
+</html>

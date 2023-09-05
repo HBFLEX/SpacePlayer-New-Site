@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block appDescription %}
+    <div class="container text-white text-center mt-5">
+        <h1>Thank you for downloading my app!</h1>
+        <p>
+            Your download will begin automatically in <span class="time-remaining"></span> seconds.
+            If the download does not start, click the button below.
+        </p>
+        {% if context.platform %}
+            <p class="status lead">Status: <span class="bg-danger p-1 rounded">😴</span></p>
+            <p class="lead">Platform: 
+                {% if context.platform == 'windows' %}
+                    <span class="platform bg-success p-1 rounded">
+                        {{ context.platform }}
+                    </span>
+                    <br/>
+                    <a href="http://localhost:5000/static/SpacePlayer-win32-x64.zip" class="downloadBtn btn btn-outline-primary mt-4" download>Download Manually</a>
+                {% else %}
+                    <span class="platform bg-primary p-1 rounded">
+                        {{ context.platform }}
+                    </span>
+                    <br/>
+                    <a href="http://localhost:5000/static/SpacePlayer-linux-x64.zip" class="downloadBtn btn btn-outline-primary mt-4" download>Download Manually</a>
+                {% endif %} 
+            </p>
+        {% endif %}
+    </div>
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock appDescription %}
