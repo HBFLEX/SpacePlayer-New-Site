@@ -3,7 +3,7 @@ const platform = document.querySelector('.platform')
 const downloadBtn = document.querySelector('.downloadBtn')
 const downloadStatus = document.querySelector('.status')
 
-let counter = 10
+let counter = 9
 
 timeRemaining.innerHTML = counter
 
@@ -52,7 +52,7 @@ if(window.location.pathname === '/download'){
         updateSiteAnalytics()
     }
 
-    setTimeout(downloadApp, 10000)
+    setTimeout(downloadApp, 9000)
 }
 
 downloadBtn.addEventListener('click', (event) => {
