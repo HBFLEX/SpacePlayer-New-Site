@@ -8,7 +8,7 @@ let counter = 9
 timeRemaining.innerHTML = counter
 
 const updateSiteAnalytics = () => {
-    fetch('http://localhost:5000/download/started', {
+    fetch('https://spaceplayer-bt5e.onrender.com/download/started', {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
