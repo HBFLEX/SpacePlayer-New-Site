@@ -14,14 +14,10 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-# Expose the port for the application
-
-EXPOSE 5000
-
 # Define the entry point for the container
 
 CMD ["flask", "run", "--host=0.0.0.0"]
 
 # The error "dockerfile must expose a tcp port" is because the Dockerfile is not exposing any ports.
 
-# In order to fix this, I added the EXPOSE instruction to specify that the container will be listening on port 5000.
+# In order to fix this, I added the EXPOSE instruction to specify that the container will be listening on port 5000.flu

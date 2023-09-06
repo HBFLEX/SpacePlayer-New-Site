@@ -75,7 +75,3 @@ def dashboard():
         'total_num_of_downloads': Downloads.query.first().total_num_of_downloads
     }
     return render_template('dashboard.html', context=context)
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
